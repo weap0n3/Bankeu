@@ -1,0 +1,12 @@
+.total_balance {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 17px;
+	border-radius: 20px;
+	background-color: #fff;
+	padding: 20px;
+	width: 300px;
+}
+
+.buttons {
+	margin: 0px 10px;
+}

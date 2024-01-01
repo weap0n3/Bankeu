@@ -1,0 +1,29 @@
+p {
+	margin: 0;
+}
+
+.sidebar {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 17px;
+	border-radius: 20px;
+	background-color: #fff;
+	height: 700px;
+	margin-bottom: 20px;
+}
+
+.image {
+	width: 400px;
+}
+
+.sidebar_menu {
+	padding: 20px;
+}
+
+.sidebar_text {
+	display: flex;
+	justify-content: space-between;
+}
+
+.action_list {
+	text-decoration: none;
+}

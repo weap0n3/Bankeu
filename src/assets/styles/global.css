@@ -1,0 +1,21 @@
+body {
+	margin: 0px;
+	background-color: #fcd3d3;
+}
+
+wrapper {
+	margin: 30px 40px;
+}
+
+header {
+	color: #141618;
+	display: flex;
+	max-height: 80px;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
