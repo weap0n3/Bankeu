@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './Transaction.module.css'
 
 const Transaction = () => {
 	return (
-		<section>
+		<section className={styles.transactions}>
 			<div>
 				<p>Lorem ipsum dolor sit.</p>
 				<datagrid></datagrid>

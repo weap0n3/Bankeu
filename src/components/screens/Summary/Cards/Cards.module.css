@@ -1,22 +1,21 @@
-p {
-	margin: 0;
-}
-
 .sidebar {
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 17px;
 	border-radius: 20px;
 	background-color: #fff;
-	height: 700px;
 	margin-bottom: 20px;
+	width: 100%;
 }
 
 .image {
-	width: 400px;
+	background-image: url('/public/creditcard.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 300px;
 }
 
 .sidebar_menu {
-	padding: 20px;
+	padding: 30px;
 }
 
 .sidebar_text {
@@ -26,4 +25,74 @@ p {
 
 .action_list {
 	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+.icons {
+	padding: 10px;
+	width: 40px;
+	margin-right: 10px;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	transition: 0.7s ease;
+}
+
+.links {
+	display: block;
+	width: 125px;
+}
+
+.arrows {
+	position: relative;
+	left: 165px;
+}
+
+.actions:hover {
+	/*animation-name: bg;
+	animation-duration: 2s;*/
+	transition: 0.7s ease;
+	transform: translate(-10px, -10px);
+}
+
+.buttons_list {
+	display: flex;
+	justify-content: center;
+}
+
+.button {
+	font-size: 24px;
+	font-weight: 500;
+	padding: 15px;
+	margin: 20px;
+	border: none;
+	border-radius: 50px;
+	width: 200px;
+	height: 70px;
+}
+
+#add {
+	color: #fff;
+	background-color: #6e468f;
+}
+
+#remove {
+	color: #ec290d;
+	background-color: #fef2f1;
+}
+
+/*Придумати щось круте, анімацію*/
+@keyframes bg {
+	from {
+		background-color: aqua;
+	}
+	to {
+		background-color: blue;
+	}
 }
