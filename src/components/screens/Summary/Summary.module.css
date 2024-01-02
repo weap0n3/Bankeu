@@ -8,13 +8,14 @@
 	display: flex;
 	width: 100%;
 	justify-content: center;
-	padding: 40px 0px;
+	padding: 20px 0px;
 }
 
 .side_blocks {
 	display: flex;
 	flex-direction: column;
 	margin-right: 100px;
+	max-width: 550px;
 }
 
 .side_blocks_frow {
