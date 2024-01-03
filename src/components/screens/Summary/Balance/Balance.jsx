@@ -8,7 +8,7 @@ const Balance = () => {
 				<p>Total Balance</p>
 			</div>
 			<div>
-				<p>
+				<p className={styles.price}>
 					{new Intl.NumberFormat('en-US', {
 						style: 'currency',
 						currency: 'USD',
@@ -17,7 +17,9 @@ const Balance = () => {
 				</p>
 			</div>
 			<div>
-				<button className={styles.buttons}>Send</button>
+				<button id={styles.send} className={styles.buttons}>
+					Send
+				</button>
 				<button className={styles.buttons}>Request</button>
 				<button className={styles.buttons}>Top Up</button>
 			</div>

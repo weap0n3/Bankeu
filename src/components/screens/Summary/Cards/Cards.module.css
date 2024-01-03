@@ -59,6 +59,7 @@ ul {
 	animation-duration: 2s;*/
 	transition: 0.7s ease;
 	transform: translate(-10px, -10px);
+	cursor: pointer;
 }
 
 .buttons_list {

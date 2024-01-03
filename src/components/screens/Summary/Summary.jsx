@@ -8,7 +8,7 @@ import Contacts from './Contacts/Contacts'
 import Transaction from './Transaction/Transaction'
 import styles from './Summary.module.css'
 
-const Home = () => {
+const Summary = () => {
 	return (
 		<wrapper className={styles.main}>
 			<Header />
@@ -30,4 +30,4 @@ const Home = () => {
 	)
 }
 
-export default Home
+export default Summary
