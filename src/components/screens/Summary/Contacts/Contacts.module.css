@@ -4,5 +4,23 @@
 	border-radius: 20px;
 	background-color: #fff;
 	padding: 20px;
-	width: 100%;
+	margin-bottom: 20px;
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contacts_list {
+	margin-top: 10px;
+	display: flex;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 20px;
 }

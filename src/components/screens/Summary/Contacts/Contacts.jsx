@@ -4,12 +4,35 @@ import styles from './Contacts.module.css'
 const Contacts = () => {
 	return (
 		<section className={styles.contacts}>
-			<div>
+			<div className={styles.info}>
 				<p>Recent Contacts</p>
 				<a href=''>All Contacts</a>
 			</div>
-			<div>
-				<button>Add new</button>
+			<div className={styles.contacts_list}>
+				<div className={styles.contact}>
+					<img width={50} src='/public/add-user.png' alt='' />
+					<p>Add</p>
+				</div>
+				<div className={styles.contact}>
+					<img width={50} src='/public/anonymous.png' alt='' />
+					<p>Name</p>
+				</div>
+				<div className={styles.contact}>
+					<img width={50} src='/public/anonymous.png' alt='' />
+					<p>Name</p>
+				</div>
+				<div className={styles.contact}>
+					<img width={50} src='/public/anonymous.png' alt='' />
+					<p>Name</p>
+				</div>
+				<div className={styles.contact}>
+					<img width={50} src='/public/anonymous.png' alt='' />
+					<p>Name</p>
+				</div>
+				<div className={styles.contact}>
+					<img width={50} src='/public/anonymous.png' alt='' />
+					<p>Name</p>
+				</div>
 			</div>
 		</section>
 	)
