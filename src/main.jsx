@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Summary from './components/screens/Summary/Summary'
 import './assets/styles/global.css'
+import Router from './components/Router'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<Summary />
+		<Router />
 	</React.StrictMode>
 )

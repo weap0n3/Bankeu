@@ -7,7 +7,6 @@ const Invitation = () => {
 	const CopyText = () => {
 		const text = ref.current.textContent
 		navigator.clipboard.writeText(text)
-		console.log(ref)
 	}
 	return (
 		<section className={styles.invitation}>

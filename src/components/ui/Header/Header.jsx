@@ -17,12 +17,24 @@ const Header = () => {
 			</div>
 			<nav>
 				<div className={styles.navigation_bar}>
-					<p className={styles.nav_button}>Summary</p>
-					<p className={styles.nav_button}>Cards</p>
-					<p className={styles.nav_button}>Activity</p>
-					<p className={styles.nav_button}>Recipients</p>
-					<p className={styles.nav_button}>Help Center</p>
-					<p className={styles.nav_button}>Earn Gifts</p>
+					<a href='' className={styles.nav_button}>
+						Summary
+					</a>
+					<a href='' className={styles.nav_button}>
+						Cards
+					</a>
+					<a href='' className={styles.nav_button}>
+						Activity
+					</a>
+					<a href='' className={styles.nav_button}>
+						Recipients
+					</a>
+					<a href='' className={styles.nav_button}>
+						Help Center
+					</a>
+					<a href='' className={styles.nav_button}>
+						Earn Gifts
+					</a>
 				</div>
 			</nav>
 		</header>

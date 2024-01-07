@@ -5,7 +5,7 @@ import Cards from './Cards/Cards'
 import Invitation from './Invitation/Invitation'
 import PendingMoney from './Pending/PendingMoney'
 import Contacts from './Contacts/Contacts'
-import Transaction from './Transaction/Transaction'
+import Transactions from './Transactions/Transactions'
 import styles from './Summary.module.css'
 
 const Summary = () => {
@@ -23,7 +23,7 @@ const Summary = () => {
 						<Invitation />
 					</div>
 					<Contacts />
-					<Transaction />
+					<Transactions />
 				</div>
 			</main>
 		</wrapper>

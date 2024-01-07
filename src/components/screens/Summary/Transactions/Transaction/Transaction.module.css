@@ -1,0 +1,26 @@
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px;
+}
+
+.name {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.description {
+	font-weight: 300;
+	color: #000000a5;
+}
+
+.data {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.time {
+	font-weight: 300;
+	color: #000000a5;
+}
