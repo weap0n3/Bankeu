@@ -4,7 +4,6 @@
 	width: 80px;
 	height: 60px;
 	border-radius: 50px;
-	margin-right: 40px;
 }
 
 .account_text {
@@ -17,7 +16,6 @@
 	align-items: center;
 	background-color: #ffffff;
 	display: flex;
-	margin: 0px 40px;
 	border-radius: 50px;
 }
 
@@ -28,7 +26,6 @@
 }
 
 .navigation_bar {
-	margin: 0px 40px;
 	font-family: 'Roboto Condensed', sans-serif;
 	height: 60px;
 	align-items: center;
@@ -40,4 +37,15 @@
 .nav_button {
 	font-size: 17px;
 	margin: 10px 50px;
+}
+
+.notActive {
+	font-size: 17px;
+	margin: 10px 50px;
+}
+
+.active {
+	font-size: 17px;
+	margin: 10px 50px;
+	font-weight: 600;
 }

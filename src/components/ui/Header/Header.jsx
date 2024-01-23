@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import styles from './Header.module.css'
 
 const Header = () => {
@@ -17,24 +18,54 @@ const Header = () => {
 			</div>
 			<nav>
 				<div className={styles.navigation_bar}>
-					<a href='' className={styles.nav_button}>
+					<NavLink
+						to='/'
+						className={({ isActive }) =>
+							[isActive ? styles.active : styles.notActive].join(' ')
+						}
+					>
 						Summary
-					</a>
-					<a href='' className={styles.nav_button}>
+					</NavLink>
+					<NavLink
+						to='/cards'
+						className={({ isActive }) =>
+							[isActive ? styles.active : styles.notActive].join(' ')
+						}
+					>
 						Cards
-					</a>
-					<a href='' className={styles.nav_button}>
+					</NavLink>
+					<NavLink
+						to='/activity'
+						className={({ isActive }) =>
+							[isActive ? styles.active : styles.notActive].join(' ')
+						}
+					>
 						Activity
-					</a>
-					<a href='' className={styles.nav_button}>
+					</NavLink>
+					<NavLink
+						to='/recipients'
+						className={({ isActive }) =>
+							[isActive ? styles.active : styles.notActive].join(' ')
+						}
+					>
 						Recipients
-					</a>
-					<a href='' className={styles.nav_button}>
+					</NavLink>
+					<NavLink
+						to='/help'
+						className={({ isActive }) =>
+							[isActive ? styles.active : styles.notActive].join(' ')
+						}
+					>
 						Help Center
-					</a>
-					<a href='' className={styles.nav_button}>
+					</NavLink>
+					<NavLink
+						to='/gifts'
+						className={({ isActive }) =>
+							[isActive ? styles.active : styles.notActive].join(' ')
+						}
+					>
 						Earn Gifts
-					</a>
+					</NavLink>
 				</div>
 			</nav>
 		</header>

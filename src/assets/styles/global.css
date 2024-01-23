@@ -5,6 +5,9 @@ body {
 
 wrapper {
 	margin: 30px 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 header {
@@ -12,7 +15,7 @@ header {
 	display: flex;
 	max-height: 80px;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	width: 100%;
 }
 

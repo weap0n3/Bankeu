@@ -13,7 +13,7 @@ const Balance = () => {
 						style: 'currency',
 						currency: 'USD',
 						currencyDisplay: 'narrowSymbol',
-					}).format(29475)}
+					}).format(18976)}
 				</p>
 			</div>
 			<div>

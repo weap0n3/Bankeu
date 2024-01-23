@@ -16,11 +16,7 @@ const Cards = () => {
 					<ul>
 						<li>
 							<div className={styles.actions}>
-								<img
-									className={styles.icons}
-									src='/public/credit-card.png'
-									alt=''
-								/>
+								<img className={styles.icons} src='/credit-card.png' alt='' />
 								<b>
 									<a className={styles.links} href=''>
 										Show Card Details
@@ -29,18 +25,14 @@ const Cards = () => {
 								<img
 									className={styles.arrows}
 									width={20}
-									src='/public/next.png'
+									src='/next.png'
 									alt=''
 								/>
 							</div>
 						</li>
 						<li>
 							<div className={styles.actions}>
-								<img
-									className={styles.icons}
-									src='/public/password.png'
-									alt=''
-								/>
+								<img className={styles.icons} src='/password.png' alt='' />
 								<b>
 									<a className={styles.links} href=''>
 										Your PIN
@@ -49,7 +41,7 @@ const Cards = () => {
 								<img
 									className={styles.arrows}
 									width={20}
-									src='/public/next.png'
+									src='/next.png'
 									alt=''
 								/>
 							</div>
