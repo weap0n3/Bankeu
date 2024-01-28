@@ -1,12 +1,11 @@
 import React from 'react'
+import Cards from '../../ui/Cards/Cards'
 import Header from '../../ui/Header/Header'
 import Balance from './Balance/Balance'
-import Cards from './Cards/Cards'
-import Invitation from './Invitation/Invitation'
-import PendingMoney from './Pending/PendingMoney'
 import Contacts from './Contacts/Contacts'
-import Transactions from './Transactions/Transactions'
+import Invitation from './Invitation/Invitation'
 import styles from './Summary.module.css'
+import Transactions from './Transactions/Transactions'
 
 const Summary = () => {
 	return (
@@ -15,7 +14,6 @@ const Summary = () => {
 			<main className={styles.main_blocks}>
 				<div className={styles.side_blocks}>
 					<Cards />
-					<PendingMoney />
 				</div>
 				<div className={styles.side_blocks}>
 					<div className={styles.side_blocks_frow}>

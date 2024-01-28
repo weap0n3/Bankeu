@@ -1,10 +1,9 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { CardService } from '../../../services/card.service'
+import Cards from '../../ui/Cards/Cards'
 import Header from '../../ui/Header/Header'
-import Cards from '../Summary/Cards/Cards'
 import Card from './Card/Card'
 import styles from './CardsDetail.module.css'
-import { CardService } from '../../../services/card.service'
 
 const CardsDetail = () => {
 	const [cards, setCards] = useState([])
@@ -25,9 +24,11 @@ const CardsDetail = () => {
 					<Cards />
 				</div>
 				<section className={styles.main_content}>
-					{cards.map(card => (
-						<Card key={card._id} card={card} />
-					))}
+					<div className={styles.card_container}>
+						{cards.map(card => (
+							<Card key={card._id} card={card} />
+						))}
+					</div>
 				</section>
 			</main>
 		</wrapper>
