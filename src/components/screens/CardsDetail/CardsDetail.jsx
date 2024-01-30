@@ -4,6 +4,7 @@ import Cards from '../../ui/Cards/Cards'
 import Header from '../../ui/Header/Header'
 import Card from './Card/Card'
 import styles from './CardsDetail.module.css'
+import AddCard from '../../ui/AddCard/AddCard'
 
 const CardsDetail = () => {
 	const [cards, setCards] = useState([])
@@ -15,13 +16,13 @@ const CardsDetail = () => {
 		}
 
 		fetchData()
-	}, [])
+	}, [cards])
 	return (
 		<wrapper className={styles.wrapper}>
 			<Header />
 			<main className={styles.main}>
 				<div className={styles.sidebar}>
-					<Cards />
+					<Cards setCards={setCards} />
 				</div>
 				<section className={styles.main_content}>
 					<div className={styles.card_container}>

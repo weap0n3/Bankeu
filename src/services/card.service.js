@@ -7,4 +7,9 @@ export const CardService = {
 			.catch(error => console.error(error))
 		return response.data
 	},
+	async addCard(cardData) {
+		await axios
+			.post('http://localhost:3002/addCard', cardData)
+			.catch(error => console.error(error))
+	},
 }

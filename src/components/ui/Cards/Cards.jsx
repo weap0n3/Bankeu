@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AddCard from '../AddCard/AddCard'
 import styles from './Cards.module.css'
 
 const Cards = () => {
+	const [showAddCardForm, setShowAddCardForm] = useState(false)
+	const handleShowForm = () => {
+		setShowAddCardForm(true)
+	}
+
+	const handleCloseFrom = () => {
+		setShowAddCardForm(false)
+	}
+
 	return (
 		<section className={styles.sidebar}>
 			<div className={styles.sidebar_menu}>
 				<div className={styles.sidebar_text}>
 					<h1>Cards</h1>
-					<a href=''>Show all</a>
+					<a href='' onClick={handleShowForm}>
+						Show all
+					</a>
 				</div>
 				<div>
 					<div className={styles.image}></div>
@@ -85,13 +97,18 @@ const Cards = () => {
 					</ul>
 				</div>
 				<div className={styles.buttons_list}>
-					<button id={styles.add} className={styles.button}>
+					<button
+						id={styles.add}
+						className={styles.button}
+						onClick={handleShowForm}
+					>
 						Add Card
 					</button>
 					<button id={styles.remove} className={styles.button}>
 						Remove
 					</button>
 				</div>
+				{showAddCardForm && <AddCard onClose={handleCloseFrom} />}
 			</div>
 		</section>
 	)
