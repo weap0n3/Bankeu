@@ -45,7 +45,7 @@ const AddCard = ({ onClose }) => {
 					<span className={styles.slider}></span>
 					<span></span>
 				</div>
-				<form>
+				<form onSubmit={e => createCard(e)}>
 					<div className={styles.details}>
 						<input
 							className={styles.inputs}
@@ -91,11 +91,7 @@ const AddCard = ({ onClose }) => {
 								required
 							/>
 						</div>
-						<button
-							type='submit'
-							className={styles.submit}
-							onClick={e => createCard(e)}
-						>
+						<button type='submit' className={styles.submit}>
 							Submit
 						</button>
 					</div>

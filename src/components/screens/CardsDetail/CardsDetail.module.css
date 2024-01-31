@@ -13,19 +13,19 @@
 }
 
 .main_content {
-	padding: 30px;
+	padding: 20px;
 	border-radius: 20px;
 	background-color: #fff;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	height: 100%;
-	max-width: 900px;
+	max-width: 920px;
 	align-content: flex-start;
 }
 
 .card_container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	width: 100%;
 }

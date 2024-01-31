@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AddCard from '../AddCard/AddCard'
 import styles from './Cards.module.css'
+import { NavLink } from 'react-router-dom'
 
 const Cards = () => {
 	const [showAddCardForm, setShowAddCardForm] = useState(false)
@@ -17,9 +18,7 @@ const Cards = () => {
 			<div className={styles.sidebar_menu}>
 				<div className={styles.sidebar_text}>
 					<h1>Cards</h1>
-					<a href='' onClick={handleShowForm}>
-						Show all
-					</a>
+					<NavLink to='/cards'>Show all</NavLink>
 				</div>
 				<div>
 					<div className={styles.image}></div>
