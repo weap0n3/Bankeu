@@ -5,17 +5,43 @@
 	font-size: 20px;
 	background-color: #000;
 	color: #fff;
-	height: 120px;
+	height: 140px;
 	width: 250px;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	margin-bottom: 30px;
+	transition: 3s ease;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+.info {
+	display: flex;
+	justify-content: space-between;
+}
+
+#expiry {
+	font-size: 15px;
+	border: 1px solid #392828;
+	border-radius: 4px;
+	padding: 2px;
+	text-align: center;
+	min-height: 18px;
+}
+
+#cardholder,
+#expiry_text {
+	color: #ffffffb9;
+	margin-bottom: 5px;
+	font-size: 12px;
 }
 
 #numbers {
+	min-height: 25px;
 	font-family: 'Orbitron', sans-serif;
+	margin-bottom: 20px;
+	font-size: 20px;
 }
 
 .modal_background {
@@ -131,4 +157,22 @@
 .submit:hover {
 	transform: scale(1.025);
 	box-shadow: 0 0 10px cyan;
+}
+
+.slider {
+	background-color: #000;
+	border-radius: 50px;
+	border: 5px;
+}
+
+.back_visible {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	transition: 3s ease;
+	transform: rotateY(180deg);
+}
+
+.text_visible {
+	transition: 0.5s ease;
+	opacity: 0;
 }

@@ -13,6 +13,11 @@ const AddCard = ({ onClose }) => {
 		const formattedInput = input.replace(/\s/g, '').match(/.{1,4}/g)
 		return formattedInput ? formattedInput.join(' ') : ''
 	}
+	const [isVisible, setIsVisible] = useState(false)
+
+	const handleCVVFocus = () => {
+		setIsVisible(true)
+	}
 
 	const createCard = async e => {
 		e.preventDefault()
@@ -32,18 +37,29 @@ const AddCard = ({ onClose }) => {
 					<p>Add your credit card details</p>
 					<div className={styles.close} onClick={onClose}></div>
 				</div>
-				<div className={styles.card}>
-					<div>
+				<div
+					className={`${styles.card} ${isVisible ? styles.back_visible : ''}`}
+				>
+					<div className={`${isVisible ? styles.text_visible : ''}`}>
 						<p>{data.bankName}</p>
 					</div>
-					<div>
-						<p>User Name</p>
+					<div className={`${isVisible ? styles.text_visible : ''}`}>
 						<p id={styles.numbers}>{data.cardNumber}</p>
+						<div className={styles.info}>
+							<div>
+								<p id={styles.cardholder}>CARDHOLDER NAME</p>
+								<p>User Name</p>
+							</div>
+							<div>
+								<p id={styles.expiry_text}>VALID THRU</p>
+								<p id={styles.expiry}>{data.dateOfEnd}</p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div>
-					<span className={styles.slider}></span>
-					<span></span>
+					<div className={styles.slider}></div>
+					<div></div>
 				</div>
 				<form onSubmit={e => createCard(e)}>
 					<div className={styles.details}>
@@ -88,6 +104,7 @@ const AddCard = ({ onClose }) => {
 								}
 								value={data.CVV}
 								pattern='\d{3}'
+								onFocus={handleCVVFocus}
 								required
 							/>
 						</div>
