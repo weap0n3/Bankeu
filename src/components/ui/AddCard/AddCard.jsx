@@ -18,6 +18,9 @@ const AddCard = ({ onClose }) => {
 	const handleCVVFocus = () => {
 		setIsVisible(true)
 	}
+	const handleCVVUnFocus = () => {
+		setIsVisible(false)
+	}
 
 	const createCard = async e => {
 		e.preventDefault()
@@ -38,12 +41,20 @@ const AddCard = ({ onClose }) => {
 					<div className={styles.close} onClick={onClose}></div>
 				</div>
 				<div
-					className={`${styles.card} ${isVisible ? styles.back_visible : ''}`}
+					className={`${styles.card} ${isVisible ? styles.back_animation : ''}`}
 				>
-					<div className={`${isVisible ? styles.text_visible : ''}`}>
+					<div
+						className={`${styles.default} ${
+							isVisible ? styles.text_visible : ''
+						}`}
+					>
 						<p>{data.bankName}</p>
 					</div>
-					<div className={`${isVisible ? styles.text_visible : ''}`}>
+					<div
+						className={`${styles.default} ${
+							isVisible ? styles.text_visible : ''
+						}`}
+					>
 						<p id={styles.numbers}>{data.cardNumber}</p>
 						<div className={styles.info}>
 							<div>
@@ -52,9 +63,24 @@ const AddCard = ({ onClose }) => {
 							</div>
 							<div>
 								<p id={styles.expiry_text}>VALID THRU</p>
-								<p id={styles.expiry}>{data.dateOfEnd}</p>
+								<p
+									className={`${styles.expiry} ${
+										data.dateOfEnd != '' ? styles.expiry_active : ''
+									}`}
+								>
+									{data.dateOfEnd}
+								</p>
 							</div>
 						</div>
+					</div>
+					<div
+						className={`${styles.back_side} ${
+							isVisible ? styles.back_visible : ''
+						}`}
+					>
+						<div className={styles.black_line}></div>
+						<div className={styles.chip_line}></div>
+						<p className={styles.cvv_field}>{data.CVV}</p>
 					</div>
 				</div>
 				<div>
@@ -105,6 +131,7 @@ const AddCard = ({ onClose }) => {
 								value={data.CVV}
 								pattern='\d{3}'
 								onFocus={handleCVVFocus}
+								onBlur={handleCVVUnFocus}
 								required
 							/>
 						</div>
