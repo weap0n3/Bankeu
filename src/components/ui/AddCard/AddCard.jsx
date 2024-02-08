@@ -9,14 +9,16 @@ const AddCard = ({ onClose }) => {
 		CVV: '',
 		dateOfEnd: '',
 	})
-	const formatCardNumber2 = e => {
-		const formattedValue1 = e.replace(/\s/g, '')
-		return formattedValue1
+	const formatCardNumberInput = e => {
+		const formattedValueInput = e.replace(/\s/g, '')
+		return formattedValueInput
 	}
 	const formatCardNumber = e => {
 		const formattedValue = e.replace(/\s/g, '').match(/.{1,4}/g)
 		return formattedValue ? formattedValue.join(' ') : ''
 	}
+	const formatDateOfEnd = e => {}
+
 	const [isVisible, setIsVisible] = useState(false)
 
 	const handleCVVFocus = () => {
@@ -109,7 +111,7 @@ const AddCard = ({ onClose }) => {
 							onChange={e => {
 								setData(prev => ({
 									...prev,
-									cardNumber: formatCardNumber2(e.target.value),
+									cardNumber: formatCardNumberInput(e.target.value),
 								}))
 							}}
 							value={formatCardNumber(data.cardNumber)}
