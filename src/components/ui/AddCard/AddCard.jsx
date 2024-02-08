@@ -9,6 +9,7 @@ const AddCard = ({ onClose }) => {
 		CVV: '',
 		dateOfEnd: '',
 	})
+	const originalDateOfEnd = data.dateOfEnd
 	const formatCardNumberInput = e => {
 		const formattedValueInput = e.replace(/\s/g, '')
 		return formattedValueInput
@@ -17,7 +18,13 @@ const AddCard = ({ onClose }) => {
 		const formattedValue = e.replace(/\s/g, '').match(/.{1,4}/g)
 		return formattedValue ? formattedValue.join(' ') : ''
 	}
-	const formatDateOfEnd = e => {}
+	const formatDateOfEnd = e => {
+		console.log(e)
+		const [month, year] = e.split('/')
+		const date = new Date(`20${year}`, month)
+		const formattedDate = date.toISOString().slice(0, 10)
+		return formattedDate
+	}
 
 	const [isVisible, setIsVisible] = useState(false)
 
@@ -30,6 +37,7 @@ const AddCard = ({ onClose }) => {
 
 	const createCard = async e => {
 		e.preventDefault()
+		data.dateOfEnd = formatDateOfEnd(data.dateOfEnd)
 		await CardService.addCard(data)
 			.then(response => {
 				console.log('successfully')
@@ -125,9 +133,12 @@ const AddCard = ({ onClose }) => {
 								type='data'
 								placeholder='Expiry Date'
 								onChange={e =>
-									setData(prev => ({ ...prev, dateOfEnd: e.target.value }))
+									setData(prev => ({
+										...prev,
+										dateOfEnd: e.target.value,
+									}))
 								}
-								value={data.dateOfEnd}
+								value={data.originalDateOfEnd}
 								pattern='(0[1-9]|1[0-2])\/\d{2}'
 								required
 							/>
