@@ -9,7 +9,7 @@ const AddCard = ({ onClose }) => {
 		CVV: '',
 		dateOfEnd: '',
 	})
-	const originalDateOfEnd = data.dateOfEnd
+	const originalDate = data.dateOfEnd
 	const formatCardNumberInput = e => {
 		const formattedValueInput = e.replace(/\s/g, '')
 		return formattedValueInput
@@ -24,6 +24,19 @@ const AddCard = ({ onClose }) => {
 		const date = new Date(`20${year}`, month)
 		const formattedDate = date.toISOString().slice(0, 10)
 		return formattedDate
+	}
+
+	const formatDateOfEndInput = e => {
+		const regex = /^\d{4}-\d{2}-\d{2}$/
+
+		const [year, month] = e.split('-')
+
+		const formattedDateString = `${month}/${year.slice(2)}`
+		if (regex.test(e)) {
+			return formattedDateString
+		} else {
+			return e
+		}
 	}
 
 	const [isVisible, setIsVisible] = useState(false)
@@ -82,7 +95,7 @@ const AddCard = ({ onClose }) => {
 										data.dateOfEnd != '' ? styles.expiry_active : ''
 									}`}
 								>
-									{data.originalDateOfEnd}
+									{formatDateOfEndInput(data.dateOfEnd)}
 								</p>
 							</div>
 						</div>
@@ -138,7 +151,7 @@ const AddCard = ({ onClose }) => {
 										dateOfEnd: e.target.value,
 									}))
 								}
-								value={data.originalDateOfEnd}
+								value={formatDateOfEndInput(data.dateOfEnd)}
 								pattern='(0[1-9]|1[0-2])\/\d{2}'
 								required
 							/>
