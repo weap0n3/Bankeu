@@ -9,9 +9,13 @@ const AddCard = ({ onClose }) => {
 		CVV: '',
 		dateOfEnd: '',
 	})
-	const formatCardNumber = input => {
-		const formattedInput = input.replace(/\s/g, '').match(/.{1,4}/g)
-		return formattedInput ? formattedInput.join(' ') : ''
+	const formatCardNumber2 = e => {
+		const formattedValue1 = e.replace(/\s/g, '')
+		return formattedValue1
+	}
+	const formatCardNumber = e => {
+		const formattedValue = e.replace(/\s/g, '').match(/.{1,4}/g)
+		return formattedValue ? formattedValue.join(' ') : ''
 	}
 	const [isVisible, setIsVisible] = useState(false)
 
@@ -55,7 +59,7 @@ const AddCard = ({ onClose }) => {
 							isVisible ? styles.text_visible : ''
 						}`}
 					>
-						<p id={styles.numbers}>{data.cardNumber}</p>
+						<p id={styles.numbers}>{formatCardNumber(data.cardNumber)}</p>
 						<div className={styles.info}>
 							<div>
 								<p id={styles.cardholder}>CARDHOLDER NAME</p>
@@ -102,10 +106,14 @@ const AddCard = ({ onClose }) => {
 						<input
 							placeholder='Card Number'
 							className={styles.inputs}
-							onChange={e =>
-								setData(prev => ({ ...prev, cardNumber: e.target.value }))
-							}
-							value={data.cardNumber}
+							onChange={e => {
+								setData(prev => ({
+									...prev,
+									cardNumber: formatCardNumber2(e.target.value),
+								}))
+							}}
+							value={formatCardNumber(data.cardNumber)}
+							maxLength={19}
 							required
 						/>
 						<div className={styles.l_row}>
