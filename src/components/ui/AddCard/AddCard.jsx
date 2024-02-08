@@ -82,7 +82,7 @@ const AddCard = ({ onClose }) => {
 										data.dateOfEnd != '' ? styles.expiry_active : ''
 									}`}
 								>
-									{data.dateOfEnd}
+									{data.originalDateOfEnd}
 								</p>
 							</div>
 						</div>
