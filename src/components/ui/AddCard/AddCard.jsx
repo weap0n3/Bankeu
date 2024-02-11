@@ -2,13 +2,15 @@ import { useState } from 'react'
 import { CardService } from '../../../services/card.service'
 import styles from './AddCard.module.css'
 
+const clearData = {
+	bankName: '',
+	cardNumber: '',
+	CVV: '',
+	dateOfEnd: '',
+}
+
 const AddCard = ({ onClose }) => {
-	const [data, setData] = useState({
-		bankName: '',
-		cardNumber: '',
-		CVV: '',
-		dateOfEnd: '',
-	})
+	const [data, setData] = useState(clearData)
 	const formatCardNumberInput = e => {
 		const formattedValueInput = e.replace(/\s/g, '')
 		return formattedValueInput
@@ -57,6 +59,7 @@ const AddCard = ({ onClose }) => {
 			.catch(err => {
 				console.log(err)
 			})
+		setData(clearData)
 	}
 
 	return (
