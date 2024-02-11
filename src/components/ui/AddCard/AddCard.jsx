@@ -9,7 +9,6 @@ const AddCard = ({ onClose }) => {
 		CVV: '',
 		dateOfEnd: '',
 	})
-	const originalDate = data.dateOfEnd
 	const formatCardNumberInput = e => {
 		const formattedValueInput = e.replace(/\s/g, '')
 		return formattedValueInput
