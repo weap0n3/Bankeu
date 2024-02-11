@@ -112,6 +112,7 @@ const AddCard = ({ onClose }) => {
 						<p className={styles.cvv_field}>{data.CVV}</p>
 					</div>
 				</div>
+				////////
 				<div>
 					<div className={styles.slider}></div>
 					<div></div>
