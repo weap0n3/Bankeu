@@ -3,18 +3,6 @@
 .card {
 	border-radius: 20px;
 	font-size: 20px;
-	background-color: #000;
-	color: #fff;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin: 10px 8px;
-}
-
-.card {
-	border-radius: 20px;
-	font-size: 20px;
 	background-color: #071638;
 	color: #fff;
 	height: 140px;
@@ -25,6 +13,7 @@
 	justify-content: space-between;
 	margin-bottom: 30px;
 	transition: 3s ease;
+	margin: 10px 8px;
 	box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 .info {
@@ -56,62 +45,6 @@
 	font-family: 'Orbitron', sans-serif;
 	margin-bottom: 20px;
 	font-size: 18px;
-}
-
-.details {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.inputs {
-	width: 95%;
-	margin: 10px 0;
-	font-size: 17px;
-	padding: 5px;
-	border-radius: 8px;
-	transition: border-color 0.4s ease;
-	border: 0.1px solid #00000039;
-}
-
-.f_row {
-	align-items: center;
-	font-size: 20px;
-	margin-bottom: 15px;
-}
-
-.l_row,
-.f_row {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-}
-
-#date,
-#cvv {
-	width: 50px;
-}
-
-.inputs:focus {
-	outline: none;
-	border: 1.7px solid cyan;
-}
-
-.submit {
-	color: #fff;
-	background-color: cyan;
-	width: 100%;
-	transition: 0.7s ease;
-	font-size: 22px;
-	font-weight: bold;
-	padding: 7px;
-	border: none;
-	border-radius: 20px;
-}
-
-.submit:hover {
-	transform: scale(1.025);
-	box-shadow: 0 0 10px cyan;
 }
 
 @keyframes flipFront {

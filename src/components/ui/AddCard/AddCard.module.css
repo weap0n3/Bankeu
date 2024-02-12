@@ -1,53 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
-.card {
-	border-radius: 20px;
-	font-size: 20px;
-	background-color: #071638;
-	color: #fff;
-	height: 140px;
-	width: 250px;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin-bottom: 30px;
-	transition: 3s ease;
-	perspective: 1000px;
-	transform-style: preserve-3d;
-	box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5);
-}
-.info {
-	display: flex;
-	justify-content: space-between;
-}
-
-.expiry {
-	font-size: 15px;
-	border-radius: 4px;
-	padding: 2px;
-	text-align: center;
-	min-height: 18px;
-}
-
-.expiry_active {
-	border: 1px solid #980000;
-}
-
-#cardholder,
-#expiry_text {
-	color: #ffffffb9;
-	margin-bottom: 5px;
-	font-size: 12px;
-}
-
-#numbers {
-	min-height: 25px;
-	font-family: 'Orbitron', sans-serif;
-	margin-bottom: 20px;
-	font-size: 18px;
-}
-
 .modal_background {
 	position: fixed;
 	top: 0;
