@@ -1,16 +1,27 @@
 import React, { useState } from 'react'
-import AddCard from '../AddCard/AddCard'
-import styles from './Cards.module.css'
 import { NavLink } from 'react-router-dom'
+import AddCard from '../AddCard/AddCard'
+import RemoveCard from '../RemoveCard/RemoveCard'
+import styles from './Cards.module.css'
 
 const Cards = () => {
 	const [showAddCardForm, setShowAddCardForm] = useState(false)
-	const handleShowForm = () => {
+	const [showRemoveCardForm, setShowRemoveCardForm] = useState(false)
+
+	const handleShowAddCardForm = () => {
 		setShowAddCardForm(true)
 	}
 
-	const handleCloseFrom = () => {
+	const handleCloseAddCardForm = () => {
 		setShowAddCardForm(false)
+	}
+
+	const handleShowRemoveCardForm = () => {
+		setShowRemoveCardForm(true)
+	}
+
+	const handleCloseRemoveCardForm = () => {
+		setShowRemoveCardForm(false)
 	}
 
 	return (
@@ -99,15 +110,22 @@ const Cards = () => {
 					<button
 						id={styles.add}
 						className={styles.button}
-						onClick={handleShowForm}
+						onClick={handleShowAddCardForm}
 					>
 						Add Card
 					</button>
-					<button id={styles.remove} className={styles.button}>
+					<button
+						id={styles.remove}
+						className={styles.button}
+						onClick={handleShowRemoveCardForm}
+					>
 						Remove
 					</button>
 				</div>
-				{showAddCardForm && <AddCard onClose={handleCloseFrom} />}
+				{showAddCardForm && <AddCard onClose={handleCloseAddCardForm} />}
+				{showRemoveCardForm && (
+					<RemoveCard onClose={handleCloseRemoveCardForm} />
+				)}
 			</div>
 		</section>
 	)
