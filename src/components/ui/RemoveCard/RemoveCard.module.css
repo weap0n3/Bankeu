@@ -1,0 +1,38 @@
+.close::before,
+.close::after {
+	left: 0;
+	position: absolute;
+	height: 10%;
+	width: 100%;
+	transition: all 0.3s ease 0s;
+	background-color: #000000;
+}
+.close::before,
+.close::after {
+	content: '';
+}
+.close::before {
+	top: 0;
+	top: 50%;
+	transform: rotate(-45deg) translate(0px, -50%);
+}
+.close::after {
+	bottom: 0;
+	bottom: 50%;
+	transform: rotate(45deg) translate(0px, 50%);
+}
+
+.close:hover {
+	transition: 1s ease;
+	transform: scale(1.2);
+}
+
+.close {
+	transition: 1s ease;
+	z-index: 5;
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 18px;
+	cursor: pointer;
+}
