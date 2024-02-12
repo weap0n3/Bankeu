@@ -23,9 +23,3 @@
 	max-width: 920px;
 	align-content: flex-start;
 }
-
-.card_container {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
