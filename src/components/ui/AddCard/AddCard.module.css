@@ -138,6 +138,7 @@
 
 #date,
 #cvv {
+	text-align: center;
 	width: 50px;
 }
 

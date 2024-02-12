@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { CardService } from '../../../services/card.service'
 import styles from './AddCard.module.css'
+import Card from '../../screens/CardsDetail/Card/Card'
 
 const clearData = {
 	bankName: '',
@@ -16,8 +17,12 @@ const AddCard = ({ onClose }) => {
 		return formattedValueInput
 	}
 	const formatCardNumber = e => {
-		const formattedValue = e.replace(/\s/g, '').match(/.{1,4}/g)
-		return formattedValue ? formattedValue.join(' ') : ''
+		if (e) {
+			const formattedValue = e.replace(/\s/g, '').match(/.{1,4}/g)
+			return formattedValue ? formattedValue.join(' ') : ''
+		} else {
+			return e
+		}
 	}
 	const formatDateOfEnd = e => {
 		console.log(e)
@@ -28,12 +33,10 @@ const AddCard = ({ onClose }) => {
 	}
 
 	const formatDateOfEndInput = e => {
-		const regex = /^\d{4}-\d{2}-\d{2}$/
-
-		const [year, month] = e.split('-')
-
-		const formattedDateString = `${month}/${year.slice(2)}`
+		const regex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/
 		if (regex.test(e)) {
+			const [year, month] = e.split('-')
+			const formattedDateString = `${month}/${year.slice(2)}`
 			return formattedDateString
 		} else {
 			return e
@@ -69,50 +72,12 @@ const AddCard = ({ onClose }) => {
 					<p>Add your credit card details</p>
 					<div className={styles.close} onClick={onClose}></div>
 				</div>
-				<div
-					className={`${styles.card} ${isVisible ? styles.back_animation : ''}`}
-				>
-					<div
-						className={`${styles.default} ${
-							isVisible ? styles.text_visible : ''
-						}`}
-					>
-						<p>{data.bankName}</p>
-					</div>
-					<div
-						className={`${styles.default} ${
-							isVisible ? styles.text_visible : ''
-						}`}
-					>
-						<p id={styles.numbers}>{formatCardNumber(data.cardNumber)}</p>
-						<div className={styles.info}>
-							<div>
-								<p id={styles.cardholder}>CARDHOLDER NAME</p>
-								<p>User Name</p>
-							</div>
-							<div>
-								<p id={styles.expiry_text}>VALID THRU</p>
-								<p
-									className={`${styles.expiry} ${
-										data.dateOfEnd != '' ? styles.expiry_active : ''
-									}`}
-								>
-									{formatDateOfEndInput(data.dateOfEnd)}
-								</p>
-							</div>
-						</div>
-					</div>
-					<div
-						className={`${styles.back_side} ${
-							isVisible ? styles.back_visible : ''
-						}`}
-					>
-						<div className={styles.black_line}></div>
-						<div className={styles.chip_line}></div>
-						<p className={styles.cvv_field}>{data.CVV}</p>
-					</div>
-				</div>
-				////////
+				<Card
+					card={data}
+					isVisible={isVisible}
+					formatCardNumber={formatCardNumber}
+					formatDateOfEndInput={formatDateOfEndInput}
+				/>
 				<div>
 					<div className={styles.slider}></div>
 					<div></div>
