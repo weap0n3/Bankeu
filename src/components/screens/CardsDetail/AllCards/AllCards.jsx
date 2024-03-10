@@ -1,7 +1,7 @@
 import Card from '../Card/Card'
 import styles from './AllCards.module.css'
 
-const AllCards = ({ cards }) => {
+const AllCards = ({ cards, showRemoveCardForm }) => {
 	const formatDateOfEndInput = e => {
 		const regex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/
 		if (regex.test(e)) {
@@ -30,6 +30,7 @@ const AllCards = ({ cards }) => {
 					card={card}
 					formatCardNumber={formatCardNumber}
 					formatDateOfEndInput={formatDateOfEndInput}
+					showRemoveCardForm={showRemoveCardForm}
 				/>
 			))}
 		</div>

@@ -1,7 +1,13 @@
 import React from 'react'
 import styles from './Card.module.css'
 
-const Card = ({ card, isVisible, formatCardNumber, formatDateOfEndInput }) => {
+const Card = ({
+	card,
+	isVisible,
+	formatCardNumber,
+	formatDateOfEndInput,
+	showRemoveCardForm,
+}) => {
 	return (
 		<div className={`${styles.card} ${isVisible ? styles.back_animation : ''}`}>
 			<div
@@ -39,6 +45,9 @@ const Card = ({ card, isVisible, formatCardNumber, formatDateOfEndInput }) => {
 				<div className={styles.chip_line}></div>
 				<p className={styles.cvv_field}>{card.CVV}</p>
 			</div>
+			{showRemoveCardForm && (
+				<button className={styles.remove_button}>Remove Card</button>
+			)}
 		</div>
 	)
 }

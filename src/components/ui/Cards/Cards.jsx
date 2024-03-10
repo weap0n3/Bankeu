@@ -4,7 +4,7 @@ import AddCard from '../AddCard/AddCard'
 import RemoveCard from '../RemoveCard/RemoveCard'
 import styles from './Cards.module.css'
 
-const Cards = () => {
+const Cards = ({ cards }) => {
 	const [showAddCardForm, setShowAddCardForm] = useState(false)
 	const [showRemoveCardForm, setShowRemoveCardForm] = useState(false)
 
@@ -124,7 +124,11 @@ const Cards = () => {
 				</div>
 				{showAddCardForm && <AddCard onClose={handleCloseAddCardForm} />}
 				{showRemoveCardForm && (
-					<RemoveCard onClose={handleCloseRemoveCardForm} />
+					<RemoveCard
+						onClose={handleCloseRemoveCardForm}
+						cards={cards}
+						showRemoveCardForm={showRemoveCardForm}
+					/>
 				)}
 			</div>
 		</section>

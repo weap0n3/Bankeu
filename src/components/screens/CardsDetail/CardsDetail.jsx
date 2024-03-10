@@ -21,7 +21,7 @@ const CardsDetail = () => {
 			<Header />
 			<main className={styles.main}>
 				<div className={styles.sidebar}>
-					<Cards setCards={setCards} />
+					<Cards cards={cards} />
 				</div>
 				<section className={styles.main_content}>
 					<AllCards cards={cards} />

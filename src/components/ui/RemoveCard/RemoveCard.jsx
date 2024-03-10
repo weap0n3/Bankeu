@@ -1,12 +1,21 @@
+import AllCards from '../../screens/CardsDetail/AllCards/AllCards'
 import styles from './RemoveCard.module.css'
-import Cards from '../Cards/Cards'
 
-const RemoveCard = ({ onClose }) => {
+const RemoveCard = ({ onClose, cards, showRemoveCardForm }) => {
 	return (
 		<div>
 			<div></div>
-			<div className={styles.close} onClick={onClose}></div>
-			<div></div>
+			<div>
+				<div className={styles.content_background}>
+					<div className={styles.content}>
+						<div className={styles.info}>
+							<p>Choose card you want to delete</p>
+							<div className={styles.close} onClick={onClose}></div>
+						</div>
+						<AllCards cards={cards} showRemoveCardForm={showRemoveCardForm} />
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }
