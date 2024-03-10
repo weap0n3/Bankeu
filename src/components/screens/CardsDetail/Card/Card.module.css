@@ -2,6 +2,7 @@
 
 .card {
 	border-radius: 20px;
+	flex-shrink: 0; /* Prevents the element from shrinking */
 	font-size: 20px;
 	background-color: #071638;
 	color: #fff;
@@ -13,8 +14,9 @@
 	justify-content: space-between;
 	margin-bottom: 30px;
 	transition: 3s ease;
-	margin: 10px 8px;
+	margin: 10px 8px 40px;
 	box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5);
+	max-height: 140px;
 }
 .info {
 	display: flex;
@@ -147,4 +149,57 @@
 	color: #000;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.close::before,
+.close::after {
+	left: 0;
+	position: absolute;
+	height: 10%;
+	width: 100%;
+	transition: all 0.3s ease 0s;
+	background-color: #000000;
+}
+.close::before,
+.close::after {
+	content: '';
+}
+.close::before {
+	top: 0;
+	top: 50%;
+	transform: rotate(-45deg) translate(0px, -50%);
+}
+.close::after {
+	bottom: 0;
+	bottom: 50%;
+	transform: rotate(45deg) translate(0px, 50%);
+}
+
+.close {
+	z-index: 5;
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 18px;
+	cursor: pointer;
+}
+
+.remove_button {
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+	background-color: #ec493b;
+	padding: 10px 20px;
+	width: 290px;
+	margin-left: -20px;
+	border-radius: 0px 0px 20px 20px;
+	border: none;
+	transition: 1s ease;
+}
+
+.remove_button:hover {
+	transition: 1s ease;
+	transform: translate(0px, -10px);
 }
