@@ -12,4 +12,9 @@ export const CardService = {
 			.post('http://localhost:3002/addCard', cardData)
 			.catch(error => console.error(error))
 	},
+	async deleteCard(id) {
+		await axios
+			.delete(`http://localhost:3002/getCards/${id}`, id)
+			.catch(error => console.log(error, id))
+	},
 }
