@@ -1,0 +1,19 @@
+.remove_button {
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+	background-color: #ec493b;
+	padding: 10px 20px;
+	width: 290px;
+	margin-left: -20px;
+	border-radius: 0px 0px 20px 20px;
+	border: none;
+	transition: 1s ease;
+}
+
+.remove_button:hover {
+	transition: 1s ease;
+	transform: translate(0px, -10px);
+}
