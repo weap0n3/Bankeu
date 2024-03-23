@@ -1,20 +1,30 @@
-import { CardService } from '../../../services/card.service'
+import { useState } from 'react'
+import ConfirmForm from '../ConfirmForm/ConfirmForm'
 import styles from './RemoveButton.module.css'
 
 const RemoveButton = ({ card }) => {
-	const removeCard = async e => {
-		await CardService.deleteCard(card._id)
-			.then(response => {
-				console.log('successfully')
-			})
-			.catch(err => {
-				console.log(err)
-			})
+	const [showConfirmRemoveCard, setShowConfirmRemoveCard] = useState(false)
+
+	const showConfirmRemove = () => {
+		setShowConfirmRemoveCard(true)
 	}
+	const closeConfirmRemove = () => {
+		setShowConfirmRemoveCard(false)
+	}
+
 	return (
-		<button className={styles.remove_button} onClick={e => removeCard(e)}>
-			Remove Card
-		</button>
+		<div>
+			<button className={styles.remove_button} onClick={showConfirmRemove}>
+				Remove Card
+			</button>
+			{showConfirmRemoveCard && (
+				<div>
+					<div>
+						<ConfirmForm card={card} onClose={closeConfirmRemove} />
+					</div>
+				</div>
+			)}
+		</div>
 	)
 }
 

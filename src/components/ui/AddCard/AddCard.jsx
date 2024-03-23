@@ -132,6 +132,7 @@ const AddCard = ({ onClose }) => {
 								}
 								value={data.CVV}
 								pattern='\d{3}'
+								maxLength={3}
 								onFocus={handleCVVFocus}
 								onBlur={handleCVVUnFocus}
 								required

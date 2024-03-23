@@ -1,0 +1,107 @@
+.modal_background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.info {
+	color: #000;
+}
+
+.text {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.button {
+	background-color: cyan;
+	transition: 0.7s ease;
+	font-size: 24px;
+	font-weight: 500;
+	padding: 15px;
+	margin: 20px;
+	border: none;
+	border-radius: 50px;
+	width: 200px;
+	height: 70px;
+}
+
+.button:hover {
+	transition: 0.7s ease;
+	transform: scale(1.1);
+}
+
+.confirm_button {
+	display: flex;
+	justify-content: center;
+}
+
+.inputs {
+	margin-left: 10px;
+	font-size: 17px;
+	width: 50px;
+	padding: 5px;
+	border-radius: 8px;
+	transition: border-color 0.4s ease;
+	border: 0.1px solid #00000039;
+	text-align: center;
+}
+
+.confirm_input {
+	display: flex;
+	margin-top: 15px;
+	align-items: center;
+}
+
+.titles {
+	margin: 0px 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.close::before,
+.close::after {
+	left: 0;
+	position: absolute;
+	height: 10%;
+	width: 100%;
+	transition: all 0.3s ease 0s;
+	background-color: #000000;
+}
+.close::before,
+.close::after {
+	content: '';
+}
+.close::before {
+	top: 0;
+	top: 50%;
+	transform: rotate(-45deg) translate(0px, -50%);
+}
+.close::after {
+	bottom: 0;
+	bottom: 50%;
+	transform: rotate(45deg) translate(0px, 50%);
+}
+
+.close {
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 18px;
+	cursor: pointer;
+}

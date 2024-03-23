@@ -6,7 +6,7 @@
 }
 
 .image {
-	background-image: url('/public/creditcard.jpg');
+	background-image: url('/creditcard.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
