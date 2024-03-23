@@ -6,13 +6,13 @@ const Header = () => {
 	return (
 		<header>
 			<div>
-				<img className={styles.logo} src='/public/logo.png' alt='' />
+				<img className={styles.logo} src='/logo.png' alt='' />
 			</div>
 			<div className={styles.account}>
 				<p className={styles.account_text}>Welcome back, Oleskii!</p>
 				<img
 					className={styles.account_image}
-					src='/public/personal_photo.png'
+					src='/personal_photo.png'
 					alt=''
 				/>
 			</div>

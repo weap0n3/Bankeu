@@ -19,7 +19,7 @@ const Invitation = () => {
 					<div className={styles.code}>
 						<p ref={ref}>Lorem ipsum dolor sit amet </p>
 						<button className={styles.button} onClick={CopyText}>
-							<img width={20} src='/public/copy.png' alt='' />
+							<img width={20} src='/copy.png' alt='' />
 						</button>
 					</div>
 				</div>

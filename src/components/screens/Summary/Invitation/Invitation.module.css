@@ -6,7 +6,7 @@
 }
 
 .image {
-	background-image: url('/public/invitation.jpg');
+	background-image: url('/invitation.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;

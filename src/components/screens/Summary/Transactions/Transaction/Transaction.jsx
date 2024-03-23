@@ -4,7 +4,7 @@ import styles from './Transaction.module.css'
 const Transaction = () => {
 	return (
 		<div className={styles.info}>
-			<img width={30} src='/public/anonymous.png' alt='' />
+			<img width={30} src='/anonymous.png' alt='' />
 			<div>
 				<p className={styles.name}>Name</p>
 				<p className={styles.description}>Description</p>

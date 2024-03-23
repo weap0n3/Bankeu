@@ -70,7 +70,7 @@ const Cards = ({ cards }) => {
 						</li>
 						<li>
 							<div className={styles.actions}>
-								<img className={styles.icons} src='/public/lock.png' alt='' />
+								<img className={styles.icons} src='/lock.png' alt='' />
 								<b>
 									<a className={styles.links} href=''>
 										Security Code
@@ -79,18 +79,14 @@ const Cards = ({ cards }) => {
 								<img
 									className={styles.arrows}
 									width={20}
-									src='/public/next.png'
+									src='/next.png'
 									alt=''
 								/>
 							</div>
 						</li>
 						<li>
 							<div className={styles.actions}>
-								<img
-									className={styles.icons}
-									src='/public/settings.png'
-									alt=''
-								/>
+								<img className={styles.icons} src='/settings.png' alt='' />
 								<b>
 									<a className={styles.links} href=''>
 										Edit Limits
@@ -99,7 +95,7 @@ const Cards = ({ cards }) => {
 								<img
 									className={styles.arrows}
 									width={20}
-									src='/public/next.png'
+									src='/next.png'
 									alt=''
 								/>
 							</div>

@@ -10,27 +10,27 @@ const Contacts = () => {
 			</div>
 			<div className={styles.contacts_list}>
 				<div className={styles.contact}>
-					<img width={50} src='/public/add-user.png' alt='' />
+					<img width={50} src='/add-user.png' alt='' />
 					<p>Add</p>
 				</div>
 				<div className={styles.contact}>
-					<img width={50} src='/public/anonymous.png' alt='' />
+					<img width={50} src='/anonymous.png' alt='' />
 					<p>Name</p>
 				</div>
 				<div className={styles.contact}>
-					<img width={50} src='/public/anonymous.png' alt='' />
+					<img width={50} src='/anonymous.png' alt='' />
 					<p>Name</p>
 				</div>
 				<div className={styles.contact}>
-					<img width={50} src='/public/anonymous.png' alt='' />
+					<img width={50} src='/anonymous.png' alt='' />
 					<p>Name</p>
 				</div>
 				<div className={styles.contact}>
-					<img width={50} src='/public/anonymous.png' alt='' />
+					<img width={50} src='/anonymous.png' alt='' />
 					<p>Name</p>
 				</div>
 				<div className={styles.contact}>
-					<img width={50} src='/public/anonymous.png' alt='' />
+					<img width={50} src='/anonymous.png' alt='' />
 					<p>Name</p>
 				</div>
 			</div>
