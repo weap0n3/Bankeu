@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { CardService } from '../../../services/card.service'
-import styles from './AddCard.module.css'
 import Card from '../../screens/CardsDetail/Card/Card'
+import styles from './AddCard.module.css'
+import { applyFormat } from './addCard-formats'
 
 const clearData = {
 	bankName: '',
@@ -12,36 +13,6 @@ const clearData = {
 
 const AddCard = ({ onClose }) => {
 	const [data, setData] = useState(clearData)
-	const formatCardNumberInput = e => {
-		const formattedValueInput = e.replace(/\s/g, '')
-		return formattedValueInput
-	}
-	const formatCardNumber = e => {
-		if (e) {
-			const formattedValue = e.replace(/\s/g, '').match(/.{1,4}/g)
-			return formattedValue ? formattedValue.join(' ') : ''
-		} else {
-			return e
-		}
-	}
-	const formatDateOfEnd = e => {
-		console.log(e)
-		const [month, year] = e.split('/')
-		const date = new Date(`20${year}`, month)
-		const formattedDate = date.toISOString().slice(0, 10)
-		return formattedDate
-	}
-
-	const formatDateOfEndInput = e => {
-		const regex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/
-		if (regex.test(e)) {
-			const [year, month] = e.split('-')
-			const formattedDateString = `${month}/${year.slice(2)}`
-			return formattedDateString
-		} else {
-			return e
-		}
-	}
 
 	const [isVisible, setIsVisible] = useState(false)
 
@@ -54,7 +25,7 @@ const AddCard = ({ onClose }) => {
 
 	const createCard = async e => {
 		e.preventDefault()
-		data.dateOfEnd = formatDateOfEnd(data.dateOfEnd)
+		data.dateOfEnd = applyFormat(data.dateOfEnd, 'DateOfEnd')
 		await CardService.addCard(data)
 			.then(response => {
 				console.log('successfully')
@@ -72,12 +43,7 @@ const AddCard = ({ onClose }) => {
 					<p>Add your credit card details</p>
 					<div className={styles.close} onClick={onClose}></div>
 				</div>
-				<Card
-					card={data}
-					isVisible={isVisible}
-					formatCardNumber={formatCardNumber}
-					formatDateOfEndInput={formatDateOfEndInput}
-				/>
+				<Card card={data} isVisible={isVisible} />
 				<div>
 					<div className={styles.slider}></div>
 					<div></div>
@@ -100,10 +66,10 @@ const AddCard = ({ onClose }) => {
 							onChange={e => {
 								setData(prev => ({
 									...prev,
-									cardNumber: formatCardNumberInput(e.target.value),
+									cardNumber: applyFormat(e.target.value, 'cardNumberInput'),
 								}))
 							}}
-							value={formatCardNumber(data.cardNumber)}
+							value={applyFormat(data.cardNumber, 'cardNumber')}
 							maxLength={19}
 							required
 						/>
@@ -119,7 +85,7 @@ const AddCard = ({ onClose }) => {
 										dateOfEnd: e.target.value,
 									}))
 								}
-								value={formatDateOfEndInput(data.dateOfEnd)}
+								value={applyFormat(data.dateOfEnd, 'DateOfEndInput')}
 								pattern='(0[1-9]|1[0-2])\/\d{2}'
 								required
 							/>

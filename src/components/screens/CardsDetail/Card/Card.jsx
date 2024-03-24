@@ -1,15 +1,9 @@
 import React from 'react'
-import styles from './Card.module.css'
-import { CardService } from '../../../../services/card.service'
+import { applyFormat } from '../../../ui/AddCard/addCard-formats'
 import RemoveButton from '../../../ui/RemoveButton/RemoveButton'
+import styles from './Card.module.css'
 
-const Card = ({
-	card,
-	isVisible,
-	formatCardNumber,
-	formatDateOfEndInput,
-	showRemoveCardForm,
-}) => {
+const Card = ({ card, isVisible, showRemoveCardForm }) => {
 	return (
 		<div className={`${styles.card} ${isVisible ? styles.back_animation : ''}`}>
 			<div
@@ -20,7 +14,7 @@ const Card = ({
 			<div
 				className={`${styles.default} ${isVisible ? styles.text_visible : ''}`}
 			>
-				<p id={styles.numbers}>{formatCardNumber(card.cardNumber)}</p>
+				<p id={styles.numbers}>{applyFormat(card.cardNumber, 'cardNumber')}</p>
 				<div className={styles.info}>
 					<div>
 						<p id={styles.cardholder}>CARDHOLDER NAME</p>
@@ -33,7 +27,7 @@ const Card = ({
 								card.dateOfEnd != '' ? styles.expiry_active : ''
 							}`}
 						>
-							{formatDateOfEndInput(card.dateOfEnd)}
+							{applyFormat(card.dateOfEnd, 'DateOfEndInput')}
 						</p>
 					</div>
 				</div>
