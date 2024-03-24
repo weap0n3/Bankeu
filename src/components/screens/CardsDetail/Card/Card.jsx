@@ -7,9 +7,11 @@ const Card = ({ card, isVisible, showRemoveCardForm }) => {
 	return (
 		<div className={`${styles.card} ${isVisible ? styles.back_animation : ''}`}>
 			<div
+				id={styles.f_row}
 				className={`${styles.default} ${isVisible ? styles.text_visible : ''}`}
 			>
 				<p>{card.bankName}</p>
+				<img className={styles.logo} src='/logo.png' alt='' />
 			</div>
 			<div
 				className={`${styles.default} ${isVisible ? styles.text_visible : ''}`}
