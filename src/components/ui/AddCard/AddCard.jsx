@@ -1,40 +1,17 @@
-import { useState } from 'react'
-import { CardService } from '../../../services/card.service'
 import Card from '../../screens/CardsDetail/Card/Card'
 import styles from './AddCard.module.css'
 import { applyFormat } from './addCard-formats'
-
-const clearData = {
-	bankName: '',
-	cardNumber: '',
-	CVV: '',
-	dateOfEnd: '',
-}
+import { useAddCard } from './useAddCard'
 
 const AddCard = ({ onClose }) => {
-	const [data, setData] = useState(clearData)
-
-	const [isVisible, setIsVisible] = useState(false)
-
-	const handleCVVFocus = () => {
-		setIsVisible(true)
-	}
-	const handleCVVUnFocus = () => {
-		setIsVisible(false)
-	}
-
-	const createCard = async e => {
-		e.preventDefault()
-		data.dateOfEnd = applyFormat(data.dateOfEnd, 'DateOfEnd')
-		await CardService.addCard(data)
-			.then(response => {
-				console.log('successfully')
-			})
-			.catch(err => {
-				console.log(err)
-			})
-		setData(clearData)
-	}
+	const {
+		data,
+		setData,
+		isVisible,
+		handleCVVFocus,
+		handleCVVUnFocus,
+		createCard,
+	} = useAddCard()
 
 	return (
 		<div className={styles.modal_background}>
