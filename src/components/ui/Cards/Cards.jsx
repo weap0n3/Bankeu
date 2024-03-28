@@ -39,65 +39,37 @@ const Cards = ({ cards }) => {
 						<li>
 							<div className={styles.actions}>
 								<img className={styles.icons} src='/credit-card.png' alt='' />
-								<b>
-									<a className={styles.links} href=''>
-										Show Card Details
-									</a>
-								</b>
-								<img
-									className={styles.arrows}
-									width={20}
-									src='/next.png'
-									alt=''
-								/>
+								<a className={styles.links} href=''>
+									<b>Show Card Details</b>
+								</a>
+								<img className={styles.arrows} src='/next.png' alt='' />
 							</div>
 						</li>
 						<li>
 							<div className={styles.actions}>
 								<img className={styles.icons} src='/password.png' alt='' />
-								<b>
-									<a className={styles.links} href=''>
-										Your PIN
-									</a>
-								</b>
-								<img
-									className={styles.arrows}
-									width={20}
-									src='/next.png'
-									alt=''
-								/>
+								<a className={styles.links} href=''>
+									<b>Your PIN</b>
+								</a>
+								<img className={styles.arrows} src='/next.png' alt='' />
 							</div>
 						</li>
 						<li>
 							<div className={styles.actions}>
 								<img className={styles.icons} src='/lock.png' alt='' />
-								<b>
-									<a className={styles.links} href=''>
-										Security Code
-									</a>
-								</b>
-								<img
-									className={styles.arrows}
-									width={20}
-									src='/next.png'
-									alt=''
-								/>
+								<a className={styles.links} href=''>
+									<b>Security Code</b>
+								</a>
+								<img className={styles.arrows} src='/next.png' alt='' />
 							</div>
 						</li>
 						<li>
 							<div className={styles.actions}>
 								<img className={styles.icons} src='/settings.png' alt='' />
-								<b>
-									<a className={styles.links} href=''>
-										Edit Limits
-									</a>
-								</b>
-								<img
-									className={styles.arrows}
-									width={20}
-									src='/next.png'
-									alt=''
-								/>
+								<a className={styles.links} href=''>
+									<b>Edit Limits</b>
+								</a>
+								<img className={styles.arrows} src='/next.png' alt='' />
 							</div>
 						</li>
 					</ul>

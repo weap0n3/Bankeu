@@ -52,6 +52,7 @@ ul {
 .arrows {
 	position: relative;
 	left: 165px;
+	width: 20px;
 }
 
 .actions:hover {
