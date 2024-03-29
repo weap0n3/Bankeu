@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import { CardService } from '../../../services/card.service'
-import { applyFormat } from './addCard-formats'
+import { useContext, useState } from 'react'
+import { applyFormat } from '../components/ui/AddCard/addCard-formats'
+import { CardContext } from '../providers/CardProvider'
+import { CardService } from '../services/card.service'
 
 const clearData = {
 	bankName: '',
@@ -11,6 +12,8 @@ const clearData = {
 
 export function useAddCard() {
 	const [data, setData] = useState(clearData)
+
+	const { setCards } = useContext(CardContext)
 
 	const [isVisible, setIsVisible] = useState(false)
 
@@ -24,13 +27,10 @@ export function useAddCard() {
 	const createCard = async e => {
 		e.preventDefault()
 		data.dateOfEnd = applyFormat(data.dateOfEnd, 'DateOfEnd')
-		await CardService.addCard(data)
-			.then(response => {
-				console.log('successfully')
-			})
-			.catch(err => {
-				console.log(err)
-			})
+		await CardService.addCard(data).catch(err => {
+			console.log(err)
+		})
+		setCards(prev => [...prev, data])
 		setData(clearData)
 	}
 
