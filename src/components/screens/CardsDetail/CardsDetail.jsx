@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CardService } from '../../../services/card.service'
 import Cards from '../../ui/Cards/Cards'
 import Header from '../../ui/Header/Header'
 import AllCards from './AllCards/AllCards'
 import styles from './CardsDetail.module.css'
+import { CardContext } from '../../../providers/CardProvider'
 
 const CardsDetail = () => {
-	const [cards, setCards] = useState([])
+	const { cards, setCards } = useContext(CardContext)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -15,7 +16,7 @@ const CardsDetail = () => {
 		}
 
 		fetchData()
-	}, [cards])
+	}, [])
 	return (
 		<wrapper className={styles.wrapper}>
 			<Header />
