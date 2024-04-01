@@ -8,9 +8,10 @@ export const CardService = {
 		return response.data
 	},
 	async addCard(cardData) {
-		await axios
+		const response = await axios
 			.post('http://localhost:3002/addCard', cardData)
 			.catch(error => console.error(error))
+		return response.data[0]
 	},
 	async deleteCard(id) {
 		await axios

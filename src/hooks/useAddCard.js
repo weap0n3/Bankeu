@@ -27,10 +27,13 @@ export function useAddCard() {
 	const createCard = async e => {
 		e.preventDefault()
 		data.dateOfEnd = applyFormat(data.dateOfEnd, 'DateOfEnd')
-		await CardService.addCard(data).catch(err => {
-			console.log(err)
-		})
-		setCards(prev => [...prev, data])
+		const response = await CardService.addCard(data)
+		const newCard = {
+			...data,
+			_id: response._id,
+			dateOfEnd: applyFormat(response.dateOfEnd, 'DateOfEndInput'),
+		}
+		setCards(prev => [...prev, newCard])
 		setData(clearData)
 	}
 
