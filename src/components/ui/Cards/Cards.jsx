@@ -80,14 +80,14 @@ const Cards = ({ cards }) => {
 						className={styles.button}
 						onClick={handleShowAddCardForm}
 					>
-						Add Card
+						<b>Add Card</b>
 					</button>
 					<button
 						id={styles.remove}
 						className={styles.button}
 						onClick={handleShowRemoveCardForm}
 					>
-						Remove
+						<b>Remove</b>
 					</button>
 				</div>
 				{showAddCardForm && <AddCard onClose={handleCloseAddCardForm} />}
