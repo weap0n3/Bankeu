@@ -1,7 +1,10 @@
 import Card from '../../screens/CardsDetail/Card/Card'
 import styles from './AddCard.module.css'
-import { applyFormat } from './addCard-formats'
-import { useAddCard } from './useAddCard'
+import BankNameInput from './FormInputs/BankNameInput'
+import CardNumberInput from './FormInputs/CardNumberInput'
+import DateOfEndInput from './FormInputs/DateOfEndInput'
+import CVVInput from './FormInputs/CVVInput'
+import { useAddCard } from '../../../hooks/useAddCard'
 
 const AddCard = ({ onClose }) => {
 	const {
@@ -27,58 +30,16 @@ const AddCard = ({ onClose }) => {
 				</div>
 				<form onSubmit={e => createCard(e)}>
 					<div className={styles.details}>
-						<input
-							className={styles.inputs}
-							placeholder='Bank Name'
-							onChange={e => {
-								setData(prev => ({ ...prev, bankName: e.target.value }))
-							}}
-							value={data.bankName}
-							required
-						/>
+						<BankNameInput data={data} setData={setData} />
 						<input className={styles.inputs} placeholder='User Name' required />
-						<input
-							placeholder='Card Number'
-							className={styles.inputs}
-							onChange={e => {
-								setData(prev => ({
-									...prev,
-									cardNumber: applyFormat(e.target.value, 'cardNumberInput'),
-								}))
-							}}
-							value={applyFormat(data.cardNumber, 'cardNumber')}
-							maxLength={19}
-							required
-						/>
+						<CardNumberInput data={data} setData={setData} />
 						<div className={styles.l_row}>
-							<input
-								id={styles.date}
-								className={styles.inputs}
-								type='data'
-								placeholder='Expiry Date'
-								onChange={e =>
-									setData(prev => ({
-										...prev,
-										dateOfEnd: e.target.value,
-									}))
-								}
-								value={applyFormat(data.dateOfEnd, 'DateOfEndInput')}
-								pattern='(0[1-9]|1[0-2])\/\d{2}'
-								required
-							/>
-							<input
-								id={styles.cvv}
-								className={styles.inputs}
-								placeholder='CVV'
-								onChange={e =>
-									setData(prev => ({ ...prev, CVV: e.target.value }))
-								}
-								value={data.CVV}
-								pattern='\d{3}'
-								maxLength={3}
-								onFocus={handleCVVFocus}
-								onBlur={handleCVVUnFocus}
-								required
+							<DateOfEndInput data={data} setData={setData} />
+							<CVVInput
+								data={data}
+								setData={setData}
+								handleCVVFocus={handleCVVFocus}
+								handleCVVUnFocus={handleCVVUnFocus}
 							/>
 						</div>
 						<button type='submit' className={styles.submit}>

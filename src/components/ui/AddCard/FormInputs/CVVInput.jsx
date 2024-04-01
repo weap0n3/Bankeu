@@ -1,4 +1,3 @@
-import { useAddCard } from '../../../../hooks/useAddCard'
 import styles from '../AddCard.module.css'
 
 const CVVInput = ({ data, setData, handleCVVFocus, handleCVVUnFocus }) => {
