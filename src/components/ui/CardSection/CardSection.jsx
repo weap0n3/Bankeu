@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { CardContext } from '../../../providers/CardProvider'
 import AddCard from '../AddCard/AddCard'
 import RemoveCard from '../RemoveCard/RemoveCard'
-import styles from './Cards.module.css'
+import styles from './CardSection.module.css'
 
-const Cards = ({ cards }) => {
+const Cards = () => {
 	const [showAddCardForm, setShowAddCardForm] = useState(false)
 	const [showRemoveCardForm, setShowRemoveCardForm] = useState(false)
+
+	const { cards } = useContext(CardContext)
 
 	const handleShowAddCardForm = () => {
 		setShowAddCardForm(true)

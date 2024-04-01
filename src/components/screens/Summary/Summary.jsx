@@ -1,5 +1,5 @@
 import React from 'react'
-import Cards from '../../ui/Cards/Cards'
+import CardSection from '../../ui/CardSection/CardSection'
 import Header from '../../ui/Header/Header'
 import Balance from './Balance/Balance'
 import Contacts from './Contacts/Contacts'
@@ -13,7 +13,7 @@ const Summary = () => {
 			<Header />
 			<main className={styles.main_blocks}>
 				<div className={styles.side_blocks}>
-					<Cards />
+					<CardSection />
 				</div>
 				<div className={styles.side_blocks}>
 					<div className={styles.side_blocks_frow}>
