@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CardContext } from '../../../providers/CardProvider'
 import { CardService } from '../../../services/card.service'
 import styles from './ConfirmForm.module.css'
 
 const ConfirmForm = ({ card, onClose }) => {
+	const { setCards } = useContext(CardContext)
 	const [confirmedCVV, confirmCVV] = useState()
 	const removeCard = async e => {
 		if (confirmedCVV == card.CVV) {
@@ -13,6 +15,9 @@ const ConfirmForm = ({ card, onClose }) => {
 				.catch(err => {
 					console.log(err)
 				})
+			setCards(prevCards =>
+				prevCards.filter(prevCard => prevCard._id !== card._id)
+			)
 		} else {
 			console.log('wrong')
 		}
