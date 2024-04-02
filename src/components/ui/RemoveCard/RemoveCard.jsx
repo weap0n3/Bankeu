@@ -1,7 +1,7 @@
 import AllCards from '../../screens/CardsDetail/AllCards/AllCards'
 import styles from './RemoveCard.module.css'
 
-const RemoveCard = ({ onClose, cards, showRemoveCardForm }) => {
+const RemoveCard = ({ onClose, showRemoveCardForm }) => {
 	return (
 		<div>
 			<div></div>
@@ -12,7 +12,7 @@ const RemoveCard = ({ onClose, cards, showRemoveCardForm }) => {
 							<p>Choose card you want to delete</p>
 							<div className={styles.close} onClick={onClose}></div>
 						</div>
-						<AllCards cards={cards} showRemoveCardForm={showRemoveCardForm} />
+						<AllCards showRemoveCardForm={showRemoveCardForm} />
 					</div>
 				</div>
 			</div>

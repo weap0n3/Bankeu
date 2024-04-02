@@ -4,7 +4,9 @@ import { useCardSection } from '../../../hooks/useCardSection'
 import { CardContext } from '../../../providers/CardProvider'
 import AddCard from '../AddCard/AddCard'
 import RemoveCard from '../RemoveCard/RemoveCard'
+import { actions } from './Actions'
 import styles from './CardSection.module.css'
+import Action from './Action'
 
 const CardSection = () => {
 	const { cards } = useContext(CardContext)
@@ -30,42 +32,9 @@ const CardSection = () => {
 				</div>
 				<div className={styles.action_list}>
 					<ul>
-						<li>
-							<div className={styles.actions}>
-								<img className={styles.icons} src='/credit-card.png' alt='' />
-								<a className={styles.links} href=''>
-									<b>Show Card Details</b>
-								</a>
-								<img className={styles.arrows} src='/next.png' alt='' />
-							</div>
-						</li>
-						<li>
-							<div className={styles.actions}>
-								<img className={styles.icons} src='/password.png' alt='' />
-								<a className={styles.links} href=''>
-									<b>Your PIN</b>
-								</a>
-								<img className={styles.arrows} src='/next.png' alt='' />
-							</div>
-						</li>
-						<li>
-							<div className={styles.actions}>
-								<img className={styles.icons} src='/lock.png' alt='' />
-								<a className={styles.links} href=''>
-									<b>Security Code</b>
-								</a>
-								<img className={styles.arrows} src='/next.png' alt='' />
-							</div>
-						</li>
-						<li>
-							<div className={styles.actions}>
-								<img className={styles.icons} src='/settings.png' alt='' />
-								<a className={styles.links} href=''>
-									<b>Edit Limits</b>
-								</a>
-								<img className={styles.arrows} src='/next.png' alt='' />
-							</div>
-						</li>
+						{actions.map(item => (
+							<Action key={item.image} item={item} />
+						))}
 					</ul>
 				</div>
 				<div className={styles.buttons_list}>
@@ -88,7 +57,6 @@ const CardSection = () => {
 				{showRemoveCardForm && (
 					<RemoveCard
 						onClose={handleCloseRemoveCardForm}
-						cards={cards}
 						showRemoveCardForm={showRemoveCardForm}
 					/>
 				)}
