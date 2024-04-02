@@ -21,6 +21,7 @@ const Header = () => {
 				<div className={styles.navigation_bar}>
 					{links.map(item => (
 						<NavLink
+							key={item.link}
 							to={item.link}
 							className={({ isActive }) =>
 								[isActive ? styles.active : styles.notActive].join(' ')

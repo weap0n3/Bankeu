@@ -1,10 +1,10 @@
+import { useAddCard } from '../../../hooks/useAddCard'
 import Card from '../../screens/CardsDetail/Card/Card'
 import styles from './AddCard.module.css'
 import BankNameInput from './FormInputs/BankNameInput'
+import CVVInput from './FormInputs/CVVInput'
 import CardNumberInput from './FormInputs/CardNumberInput'
 import DateOfEndInput from './FormInputs/DateOfEndInput'
-import CVVInput from './FormInputs/CVVInput'
-import { useAddCard } from '../../../hooks/useAddCard'
 
 const AddCard = ({ onClose }) => {
 	const {
@@ -28,7 +28,12 @@ const AddCard = ({ onClose }) => {
 					<div className={styles.slider}></div>
 					<div></div>
 				</div>
-				<form onSubmit={e => createCard(e)}>
+				<form
+					onSubmit={e => {
+						createCard(e)
+						setTimeout(onClose, 500)
+					}}
+				>
 					<div className={styles.details}>
 						<BankNameInput data={data} setData={setData} />
 						<input className={styles.inputs} placeholder='User Name' required />

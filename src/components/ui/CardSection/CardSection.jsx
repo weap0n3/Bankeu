@@ -9,8 +9,6 @@ import styles from './CardSection.module.css'
 import Action from './Action'
 
 const CardSection = () => {
-	const { cards } = useContext(CardContext)
-
 	const {
 		showAddCardForm,
 		showRemoveCardForm,
