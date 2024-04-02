@@ -1,31 +1,22 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useCardSection } from '../../../hooks/useCardSection'
 import { CardContext } from '../../../providers/CardProvider'
 import AddCard from '../AddCard/AddCard'
 import RemoveCard from '../RemoveCard/RemoveCard'
 import styles from './CardSection.module.css'
 
-const Cards = () => {
-	const [showAddCardForm, setShowAddCardForm] = useState(false)
-	const [showRemoveCardForm, setShowRemoveCardForm] = useState(false)
-
+const CardSection = () => {
 	const { cards } = useContext(CardContext)
 
-	const handleShowAddCardForm = () => {
-		setShowAddCardForm(true)
-	}
-
-	const handleCloseAddCardForm = () => {
-		setShowAddCardForm(false)
-	}
-
-	const handleShowRemoveCardForm = () => {
-		setShowRemoveCardForm(true)
-	}
-
-	const handleCloseRemoveCardForm = () => {
-		setShowRemoveCardForm(false)
-	}
+	const {
+		showAddCardForm,
+		showRemoveCardForm,
+		handleShowAddCardForm,
+		handleCloseAddCardForm,
+		handleShowRemoveCardForm,
+		handleCloseRemoveCardForm,
+	} = useCardSection()
 
 	return (
 		<section className={styles.sidebar}>
@@ -106,4 +97,4 @@ const Cards = () => {
 	)
 }
 
-export default Cards
+export default CardSection
