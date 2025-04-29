@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { CardContext } from '../../../providers/CardProvider'
 import { CardService } from '../../../services/card.service'
 import CardSection from '../../ui/CardSection/CardSection'
@@ -16,7 +16,7 @@ const CardsDetail = () => {
 		}
 
 		fetchData()
-	}, [])
+	})
 	return (
 		<div className={styles.wrapper}>
 			<Header />

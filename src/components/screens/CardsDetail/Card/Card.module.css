@@ -45,7 +45,7 @@
 	min-height: 25px;
 	font-family: 'Orbitron', sans-serif;
 	margin-bottom: 20px;
-	font-size: 18px;
+	font-size: 17.6px;
 }
 
 @keyframes flipFront {
@@ -123,10 +123,11 @@
 
 .black_line {
 	position: absolute;
+	top: 10px;
 	left: -20px;
 	width: 290px;
 	height: 45px;
-	background-color: #000;
+	background-color: #090606;
 }
 
 .back_visible {
@@ -136,7 +137,7 @@
 
 .chip_line {
 	position: absolute;
-	top: 60px;
+	top: 70px;
 	left: 80px;
 	border-radius: 5px;
 	width: 170px;
@@ -153,7 +154,7 @@
 .cvv_field {
 	transform: scaleX(-1);
 	position: absolute;
-	top: 60px;
+	top: 70px;
 	min-height: 24px;
 	width: 30px;
 	background-color: #fff;
