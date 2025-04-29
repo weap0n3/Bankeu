@@ -13,12 +13,16 @@
     "axios": "^1.8.4",
     "copy-to-clipboard": "^3.3.3",
     "cors": "^2.8.5",
+    "cross-spawn": "~7.0.5",
+    "esbuild": "~0.25.0",
     "express": "^5.1.0",
     "mongoose": "^8.13.1",
+    "nanoid": "~3.3.8",
     "node": "^18.20.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",
+    "rollup": "~4.22.4",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
@@ -29,6 +33,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^5.0.8"
+    "vite": "~5.0.12"
   }
 }
