@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.8.4",
     "copy-to-clipboard": "^3.3.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.1",
+    "node": "^18.20.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^6.21.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
